@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 //import PropTypes from 'prop-types';
 //import _isEqual from 'lodash.isequal';
 //import { withStyles } from 'material-ui/styles';
@@ -20,7 +21,8 @@ export default class App extends Component {
   shouldRenderNull = () => false;
 
   render = () => {
-    return (      
+    return (    
+      <MuiThemeProvider>  
         <div className="App">
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
@@ -29,7 +31,8 @@ export default class App extends Component {
           <p className="App-intro">
             To get started, edit <code>src/App.js</code> and save to reload.
           </p>
-        </div>      
+        </div>   
+      </MuiThemeProvider>   
     );
   }
 }
