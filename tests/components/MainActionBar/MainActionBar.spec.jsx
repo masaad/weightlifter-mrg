@@ -4,28 +4,28 @@ import { bindActionCreators } from 'redux';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { shallow, mount } from 'enzyme';
-import AppBar from '../../../src/components/AppBar/AppBar';
+import MainActionBar from '../../../src/components/MainActionBar/MainActionBar';
 
-describe('(Component) AppBar', () => {
-  describe(`AppBar with no properties`, () => {
+describe('(Component) MainActionBar', () => {
+  describe(`MainActionBar with no properties`, () => {
     let wrapper;
 
     beforeEach(() => {
       wrapper = shallow(
-        <AppBar />
+        <MainActionBar />
       );
     })
 
-    it(`Contains the 'AppBar' class.`, () => {
-      const el = wrapper.find('div.AppBar');
+    it(`Contains the 'MainActionBar' class.`, () => {
+      const el = wrapper.find('div.MainActionBar');
       expect(el).toBeTruthy();
     })
   })
 
-  describe(`AppBar with properties`, () => {
+  describe(`MainActionBar with properties`, () => {
     let wrapper;
     let middlewares, mockStore, store, dispatch;
-    let appBarProps = {};
+    let mainActionBarProps = {};
 
     beforeEach(() => {
       middlewares = [ thunk ];
@@ -33,7 +33,7 @@ describe('(Component) AppBar', () => {
       store = mockStore({
         mockKey: `mockValue`,
       });
-      appBarProps = {
+      mainActionBarProps = {
         reduxState: store.getState(),
         reduxActions: {
           ...bindActionCreators({
@@ -43,7 +43,7 @@ describe('(Component) AppBar', () => {
       }
 
       wrapper = shallow(
-        <AppBar {...appBarProps}/>
+        <MainActionBar {...mainActionBarProps}/>
       )
     })
 

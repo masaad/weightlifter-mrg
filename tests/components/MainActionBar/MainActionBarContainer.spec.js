@@ -1,9 +1,9 @@
 import {
   mapDispatchToProps,
   mapStateToProps,
-} from '../../../src/components/AppBar/AppBarContainer';
+} from '../../../src/components/MainActionBar/MainActionBarContainer';
 
-describe('(Container) AppBar', () => {
+describe('(Container) MainActionBar', () => {
   it('Should return redux action.', () => {
     const dispatch = () => {};
     expect(mapDispatchToProps(dispatch).reduxActions).toBeTruthy();
